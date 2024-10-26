@@ -1,12 +1,9 @@
 package org.exchangeproject;
 
 import org.exchangeproject.api.ExchangeRateClient;
+import org.exchangeproject.model.ExchangeRates;
 import org.exchangeproject.utils.CurrencyConverter;
 import org.exchangeproject.utils.Menu;
-import org.exchangeproject.model.ExchangeRates;
-import org.exchangeproject.utils.ScannerUtils;
-
-import java.util.Map;
 
 public class App {
     public static void main(String[] args) {

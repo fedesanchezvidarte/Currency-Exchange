@@ -10,7 +10,7 @@ import java.util.Map;
  * provide them to other parts of the application.
  */
 public class ExchangeRates {
-    private Map<String, Double> rates;
+    private final Map<String, Double> rates;
 
     public ExchangeRates(Map<String, Double> initialRates) {
         this.rates = new HashMap<>(initialRates); // Correctly initializes the rates map with the passed values.
