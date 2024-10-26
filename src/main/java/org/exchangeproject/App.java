@@ -4,6 +4,7 @@ import org.exchangeproject.api.ExchangeRateClient;
 import org.exchangeproject.utils.CurrencyConverter;
 import org.exchangeproject.utils.Menu;
 import org.exchangeproject.model.ExchangeRates;
+import org.exchangeproject.utils.ScannerUtils;
 
 import java.util.Map;
 
@@ -15,5 +16,6 @@ public class App {
 
         Menu menu = new Menu(converter, rateClient);
         menu.displayMenu();
+        ScannerUtils.closeScanner();
     }
 }
