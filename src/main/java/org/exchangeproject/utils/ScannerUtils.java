@@ -22,7 +22,7 @@ public class ScannerUtils {
      */
     public static int readInt() {
         while (true) {
-            System.out.print("Please enter an number: ");
+            System.out.print("Please enter a number: ");
             String input = scanner.nextLine();
             try {
                 return Integer.parseInt(input);
