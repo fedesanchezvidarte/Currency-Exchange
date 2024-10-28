@@ -8,7 +8,7 @@ import org.exchangeproject.utils.Menu;
 public class App {
     public static void main(String[] args) {
         ExchangeRateClient rateClient = new ExchangeRateClient();
-        ExchangeRates rates = new ExchangeRates(rateClient.getRates()); // Asume that rateClient.getRates() returns a Map<String, Double>
+        ExchangeRates rates = new ExchangeRates(rateClient.getRates());
         CurrencyConverter converter = new CurrencyConverter(rates.getAllRates());
 
         Menu menu = new Menu(converter, rateClient);

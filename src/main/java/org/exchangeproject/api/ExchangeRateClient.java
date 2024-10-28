@@ -13,6 +13,11 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * ExchangeRateClient class is responsible for fetching exchange rate data
+ * from the Open Exchange Rates API. It handles HTTP requests, error logging,
+ * and JSON deserialization.
+ */
 public class ExchangeRateClient {
     private static final Logger logger = Logger.getLogger(ExchangeRateClient.class.getName());
     private static final String API_KEY = System.getenv("OPEN_EXCHANGE_RATES_API_KEY");
@@ -26,6 +31,11 @@ public class ExchangeRateClient {
         this.gson = new Gson();
     }
 
+    /**
+     * Fetches the latest exchange rates from the API.
+     * @return a map of currency codes to their respective exchange rates if successful,
+     *         or null if an error occurs during the request or data processing.
+     */
     public Map<String, Double> getRates() {
         Request request = new Request.Builder()
                 .url(API_URL)
@@ -51,6 +61,12 @@ public class ExchangeRateClient {
         }
     }
 
+    /**
+     * Safely casts an object to a map of strings to doubles.
+     * This method checks types to avoid ClassCastException.
+     * @param object the object to cast.
+     * @return a map of strings to doubles, or null if the object cannot be cast.
+     */
     private Map<String, Double> safelyCastToMapStringDouble(Object object) {
         if (object instanceof Map<?, ?> rawMap) {
             Map<String, Double> map = new HashMap<>();
